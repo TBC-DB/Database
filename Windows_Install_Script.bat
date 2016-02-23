@@ -4,6 +4,7 @@ REM USER CONFIGURATION REQUIRED FOR AUTOMATIC IMPORT OF DATA - PLEASE UPDATE THI
 REM ########################################################################################################
 SET CMangos="C:\CMangos"
 SET ACID="C:\CMangos\ACID\acid_tbc"
+SET Hostname="localhost"
 SET User="mangos"
 SET Password="mangos"
 SET WorldDB="mangos"
@@ -156,7 +157,7 @@ ECHO.
 ECHO --------------------------------------------------------------
 ECHO PLEASE BE PATIENT WHILE NEW DATA IS IMPORTING TO THE DATABASES
 ECHO --------------------------------------------------------------
-mysql.exe --user=%User% --password=%Password% %WorldDB% < %CurrentVersion%_FULL.sql
+mysql.exe --host=%Hostname% --user=%User% --password=%Password% %WorldDB% < %CurrentVersion%_FULL.sql
 ECHO.
 ECHO --------------------
 ECHO REMOVE OLD SQL FILES
@@ -193,7 +194,7 @@ ECHO.
 ECHO --------------------------------------------------------------
 ECHO PLEASE BE PATIENT WHILE NEW DATA IS IMPORTING TO THE DATABASES
 ECHO --------------------------------------------------------------
-mysql.exe --user=%User% --password=%Password% %WorldDB% < %StableVersion%_FULL.sql
+mysql.exe --host=%Hostname% --user=%User% --password=%Password% %WorldDB% < %StableVersion%_FULL.sql
 ECHO.
 ECHO --------------------
 ECHO REMOVE OLD SQL FILES
@@ -232,8 +233,8 @@ ECHO.
 ECHO -----------------------------------------------------
 ECHO IMPORT BASE DATA INTO DATABASES - NO CONTENT INCLUDED
 ECHO -----------------------------------------------------
-mysql.exe --user=%User% --password=%Password% %WorldDB% < %CMangos%\sql\base\mangos.sql
-mysql.exe --user=%User% --password=%Password% %CharactersDB% < %CMangos%\sql\base\characters.sql
+mysql.exe --host=%Hostname% --user=%User% --password=%Password% %WorldDB% < %CMangos%\sql\base\mangos.sql
+mysql.exe --host=%Hostname% --user=%User% --password=%Password% %CharactersDB% < %CMangos%\sql\base\characters.sql
 ECHO.
 ECHO --------------------
 ECHO REMOVE OLD SQL FILES
@@ -261,19 +262,19 @@ ECHO.
 ECHO -----------------------------------------
 ECHO DELETE EXISTING GAME DATA FOR FRESH SETUP
 ECHO -----------------------------------------
-mysql.exe --user=%User% --password=%Password% < Tools\Install_Script_Helpers\TBC-DB_Drop_Mysql.sql
+mysql.exe --host=%Hostname% --user=%User% --password=%Password% < Tools\Install_Script_Helpers\TBC-DB_Drop_Mysql.sql
 ECHO.
 ECHO -------------------------------------------------
 ECHO CREATE MYSQL USER AND NEW REQUIRED GAME DATABASES
 ECHO -------------------------------------------------
-mysql.exe --user=%User% --password=%Password% < %CMangos%\sql\create\db_create_mysql.sql
+mysql.exe --host=%Hostname% --user=%User% --password=%Password% < %CMangos%\sql\create\db_create_mysql.sql
 ECHO.
 ECHO -----------------------------
 ECHO LOAD DATABASE TABLE STRUCTURE 
 ECHO -----------------------------
-mysql.exe --user=%User% --password=%Password% %WorldDB% < %CMangos%\sql\base\mangos.sql
-mysql.exe --user=%User% --password=%Password% %CharactersDB% < %CMangos%\sql\base\characters.sql
-mysql.exe --user=%User% --password=%Password% %RealmdDB% < %CMangos%\sql\base\realmd.sql
+mysql.exe --host=%Hostname% --user=%User% --password=%Password% %WorldDB% < %CMangos%\sql\base\mangos.sql
+mysql.exe --host=%Hostname% --user=%User% --password=%Password% %CharactersDB% < %CMangos%\sql\base\characters.sql
+mysql.exe --host=%Hostname% --user=%User% --password=%Password% %RealmdDB% < %CMangos%\sql\base\realmd.sql
 ECHO.
 ECHO ----------------------------------------------------------------------
 ECHO BUILDING COMPLETE NEW FULL DB FROM NEWEST TBC-DB / CMANGOS / ACID DATA
@@ -290,7 +291,7 @@ ECHO.
 ECHO --------------------------------------------------------------
 ECHO PLEASE BE PATIENT WHILE NEW DATA IS IMPORTING TO THE DATABASES
 ECHO --------------------------------------------------------------
-mysql.exe --user=%User% --password=%Password% %WorldDB% < %CurrentVersion%_FULL.sql
+mysql.exe --host=%Hostname% --user=%User% --password=%Password% %WorldDB% < %CurrentVersion%_FULL.sql
 ECHO.
 ECHO --------------------
 ECHO REMOVE OLD SQL FILES
@@ -320,7 +321,7 @@ ECHO.
 ECHO -----------------------------------------------------------
 ECHO DELETE EXISTING CMANGOS / SD2 GAME DATABASES AND MYSQL USER
 ECHO -----------------------------------------------------------
-mysql.exe --user=%User% --password=%Password% < Tools\Install_Script_Helpers\TBC-DB_Drop_Mysql.sql
+mysql.exe --host=%Hostname% --user=%User% --password=%Password% < Tools\Install_Script_Helpers\TBC-DB_Drop_Mysql.sql
 ECHO.
 ECHO -------------------------------------------------------------
 ECHO ALL DEFAULT DATABASES HAVE BEEN DELETED AND USERS CLEANED OUT 

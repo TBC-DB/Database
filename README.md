@@ -28,7 +28,9 @@ with creatures, items, objects, quests, etc.
 It must be applied after creating the `mangos` database from your CMaNGOS core distribution [cmangos-tbc] from [CMaNGOS Project].
 
 For Easy Installation Edit The Following Windows Batch File `./Windows_Install_Script.bat` if you are a Windows User and configure
-the Installation Options Setting Your MYSQL Database Names, Passwords and Source Folders.
+the Installation Options Setting Your MYSQL Database Names, Passwords and Source Folders. Optionally specify an alternate hostname
+to make the script run the SQL on a remote MySQL database server (eg: a Linux host) - requires additional user/privilege creation
+on the remote MySQL server).
 
 It will provide you a Menu With Various Installation Options and Configurations That Have Greatly Simplified The Process.
 
