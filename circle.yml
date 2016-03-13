@@ -1,0 +1,6 @@
+test:
+  pre:
+    # Test that we can apply the updates (SQL syntax)
+    - cat Current_Release/Full_DB/*.sql | mysql -u ubuntu circle_test
+    - cat Updates/Full_DB/*.sql | mysql -u ubuntu circle_test
+    - cat Updates/Full_DB/Custom_Data/*.sql | mysql -u ubuntu circle_test
