@@ -36,3 +36,4 @@ UPDATE `creature_template` SET `ModelId3`='0', `FactionAlliance`='90', `FactionH
 UPDATE `creature_template` SET `ModelId2`='16891', `ModelId3`='0', `FactionAlliance`='16', `FactionHorde`='16' WHERE `Entry`='19016';
 UPDATE `creature_template` SET `ModelId3`='0' WHERE `Entry`='21174';
 UPDATE `creature_template` SET `ModelId2`='16891', `ModelId3`='0' WHERE `Entry`='17477';
+UPDATE `creature_template` SET `ModelId3`='0', `FactionAlliance`='14', `FactionHorde`='14' WHERE `Entry`='17662';
