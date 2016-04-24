@@ -28,3 +28,7 @@ UPDATE `creature_template` SET `modelid2`=16564, `modelid3`=16565, `modelid4`=16
 UPDATE `creature_template` SET `modelid2`=16560, `modelid3`=16561, `modelid4`=16562 WHERE `entry`=16470;
 -- Shadow Pillager
 UPDATE `creature_template` SET `modelid2`=16905, `modelid3`=16906, `modelid4`=16907 WHERE `entry`=16540;
+-- Phantom Attendant
+UPDATE `creature_template` SET `modelid2`=16515, `modelid3`=16516, `modelid4`=16517 WHERE `entry`=16406;
+-- Spectral Retainer
+UPDATE `creature_template` SET `modelid2`=16510, `modelid3`=16511, `modelid4`=16512 WHERE `entry`=16410;
