@@ -3,12 +3,12 @@
 SET @RELIC = '153556'; -- Thaurissan Relic
 SET @VOICE = '8887'; -- A tormented voice
 
-DELETE FROM `mangos`.`db_script_string` WHERE `entry` BETWEEN 2000000544 AND 2000000551;
-DELETE FROM `mangos`.`dbscripts_on_go_use` where `id` IN (SELECT guid FROM `mangos`.`gameobject` WHERE `id` = @RELIC);
+DELETE FROM `db_script_string` WHERE `entry` BETWEEN 2000000544 AND 2000000551;
+DELETE FROM `dbscripts_on_go_use` where `id` IN (SELECT guid FROM `gameobject` WHERE `id` = @RELIC);
 
-UPDATE `mangos`.`gameobject_template` SET `displayId` = 406, `data1` = 0, `flags` = 0, `size` = 2, `data3` = 3000  WHERE `entry` = @RELIC;
+UPDATE `gameobject_template` SET `displayId` = 406, `data1` = 0, `flags` = 0, `size` = 2, `data3` = 3000  WHERE `entry` = @RELIC;
 
-INSERT INTO `mangos`.`db_script_string` (`entry`,`content_default`,`content_loc1`,`content_loc2`,`content_loc3`,`content_loc4`,`content_loc5`,`content_loc6`,`content_loc7`,`content_loc8`,`sound`,`type`,`language`,`emote`,`comment`) VALUES 
+INSERT INTO `db_script_string` (`entry`,`content_default`,`content_loc1`,`content_loc2`,`content_loc3`,`content_loc4`,`content_loc5`,`content_loc6`,`content_loc7`,`content_loc8`,`sound`,`type`,`language`,`emote`,`comment`) VALUES 
 (2000000544,'You will perish here. <Your mind fills with visions of chaos and destruction.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
 (2000000545,'Leave this place. <The relic emits a white hot arc of flame. A memory has been gained: A lone Dark Iron dwarf is surrounded by seven corpses, kneeling before a monolith of flame.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
 (2000000546,'Defiler... you will be punished for this incursion. <A symbol of flame radiates from the relic before it crumbles to the earth.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
@@ -18,7 +18,7 @@ INSERT INTO `mangos`.`db_script_string` (`entry`,`content_default`,`content_loc1
 (2000000550,'He cannot be defeated. <The relic burns to nothing. The memories it held are now your own. This city was destroyed by a being not of this world.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL),
 (2000000551,'Do not taint these ruins, mortal. <You are engulfed in a blinding flash of light. A creature composed entirely of flame is the only thing you can remember seeing.>',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,4,0,0,NULL);
 
-INSERT INTO `mangos`.`dbscripts_on_go_use` (`id`,`delay`,`command`,`datalong`,`datalong2`,`buddy_entry`,`search_radius`,`data_flags`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`x`,`y`,`z`,`o`,`comments`) VALUES 
+INSERT INTO `dbscripts_on_go_use` (`id`,`delay`,`command`,`datalong`,`datalong2`,`buddy_entry`,`search_radius`,`data_flags`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`x`,`y`,`z`,`o`,`comments`) VALUES 
 (4611,2,0,0,0,@VOICE,10,3,2000000550,2000000551,2000000544,2000000545,0,0,0,0,'Thaurissan relic - random whisper'),
 (4611,1,10,@VOICE,5000,0,0,0,0,0,0,0,-7800.4,-1900.31,135.089,0,''),
 (4594,2,0,0,0,@VOICE,10,3,2000000549,2000000550,2000000551,2000000544,0,0,0,0,'Thaurissan relic - random whisper'),
