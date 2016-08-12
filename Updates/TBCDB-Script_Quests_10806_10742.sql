@@ -14,14 +14,6 @@ UPDATE `creature` SET `Map` = '0' WHERE `id` = @GOC; 	-- hide spawned Goc in TBC
 
 UPDATE `item_template` SET `spellcharges_1` = '1' WHERE `entry` IN (@SIGNET, @HORN); -- temp prevent multiple goc summons
 
--- Adjust EquipmentTemplateIds in TBC to match UDB keys - does nothing when run in UDB
-DELETE FROM `creature_equip_template` WHERE `entry` IN ('959','5554');
-UPDATE `creature_template` SET `EquipmentTemplateId` = '959' WHERE `EquipmentTemplateId` = '5554';
-INSERT INTO `creature_equip_template` (`entry`,`equipentry1`,`equipentry2`,`equipentry3`) VALUES ('959','10612','10612','0');
-DELETE FROM `creature_equip_template` WHERE `entry` IN ('1543','1487');
-UPDATE `creature_template` SET `EquipmentTemplateId` = '1543' WHERE `EquipmentTemplateId` = '1487';
-INSERT INTO `creature_equip_template` (`entry`,`equipentry1`,`equipentry2`,`equipentry3`) VALUES ('1543','22391','0','0');
-
 UPDATE `creature_template` 
 SET 
     `DamageMultiplier` = '4.6',
@@ -59,7 +51,7 @@ SET
     `MaxMeleeDmg` = '694',
     `MeleeAttackPower` = '293',
     `MeleeBaseAttackTime` = '2000',
-    `EquipmentTemplateId` = '1543', -- must be 1487 to appear in TBC? Even with no creature_equip_template entry...
+    `EquipmentTemplateId` = '1487', -- change to 1543 for UDB
     `MovementType` = '0',
     `AIName` = 'EventAI'
 WHERE
@@ -79,7 +71,7 @@ SET
     `MaxMeleeDmg` = '694',
     `MeleeAttackPower` = '293',
     `MovementType` = '0',
-    `EquipmentTemplateId` = '959',
+    `EquipmentTemplateId` = '5554', -- change to 959 for UDB
     `AIName` = 'EventAI'
 WHERE
     `entry` = @REXXAR;
