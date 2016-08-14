@@ -14,7 +14,7 @@ UPDATE `creature` SET `Map` = '0' WHERE `id` IN (@GOC, @SABELLIAN); -- hide spaw
 
 UPDATE `creature_template` 
 SET 
-    `DamageMultiplier` = '4.6',
+    `DamageMultiplier`  = '4.6',
     `RegenerateStats` = '1',
     `MinRangedDmg` = '215',
     `MaxRangedDmg` = '320',
@@ -128,7 +128,7 @@ INSERT INTO `dbscripts_on_event` (`id`,`delay`,`command`,`datalong`,`datalong2`,
 
 INSERT INTO `dbscripts_on_creature_death` (`id`,`delay`,`command`,`datalong`,`datalong2`,`buddy_entry`,`search_radius`,`data_flags`,`dataint`,`dataint2`,`dataint3`,`dataint4`,`x`,`y`,`z`,`o`,`comments`) VALUES
 (@GOC,0,44,@BARON,0,@SABELLIAN,100,3,0,0,0,0,0,0,0,0,'Baron transform to human form'),
-(@GOC,1,3,0,1000,@BARON,100,3,0,0,0,0,3724.598145,5355.335938,-8.116101,1.696503,'Baron move'),
+(@GOC,1,3,0,1000,@BARON,100,3,0,0,0,0,3728.631836,5360.404785,-8.095345,2.246897,'Baron move'),
 (@GOC,2,0,0,0,@BARON,100,3,2000005903,0,0,0,0,0,0,0,'Baron yell 4'),
 (@GOC,5,15,39225,0,@BARON,100,3,0,0,0,0,0,0,0,0,'Baron cast teleport'),
 (@GOC,6,18,0,0,@BARON,100,2,0,0,0,0,0,0,0,0,'Baron despawn'),
@@ -170,10 +170,11 @@ INSERT INTO `creature_ai_scripts` (`creature_id`,`event_type`,`event_inverse_pha
 (@BARON, 9, 13, 100, 1, 9, 80, 1000, 1000, 49, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Baron Sablemane - Enable Dynamic Movement at 9-80 Yards (Phase 1)'),
 (@BARON, 9, 13, 100, 1, 0, 40, 3300, 5000, 11, 17290, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Baron Sablemane - Cast Fireball (Phase 1)'),
 (@BARON, 4, 0, 100, 0, 0, 0, 0, 0, 49, 1, 0, 0, 22, 1, 0, 0, 0, 0, 0, 0, 'Baron Sablemane - Enable Dynamic Movement and Set Phase 1 on Aggro'),
-(@BARON, 9, 13, 100, 1, 0, 40, 15400, 23500, 11, 39268, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 'Baron Sablemane - Cast Chains of Ice (Phase 1)'),
-(@BARON, 2, 0, 100, 0, 51, 0, 0, 0, 22, 3, 0, 0, 1, -1395, 0, 0, 49, 0, 0, 0, 'Baron Sablemane - Set Phase 3, Disable Dynamic Movement, and speak at 51% HP'),
-(@BARON, 2, 0, 100, 0, 49, 0, 0, 0, 11, 39225, 0, 1, 1, -1396, 0, 0, 36, @SABELLIAN, 0, 0, 'Baron Sablemane - Play emote, Cast Black Dragon Form and Transform at 49% HP'),
-(@BARON, 0, 7, 100, 1, 3000, 4000, 6500, 7500, 11, 39263, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Baron Sablemane - Cast Flame Breath (Phase 3)'),
+(@BARON, 9, 13, 100, 1, 0, 40, 15400, 23500, 11, 39268, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Baron Sablemane - Cast Chains of Ice (Phase 1)'),
+(@BARON, 12, 0, 100, 0, 16, 0, 0, 0, 1, -1395, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Baron Sablemane - Speak at Goc 16% HP'),
+(@BARON, 12, 0, 100, 0, 15, 0, 0, 0, 11, 39255, 0, 1, 1, -1396, 0, 0, 22, 3, 0, 0, 'Baron Sablemane - Play text emote, set Phase 3, and Cast Black Dragon Form at Goc 15% HP'),
+(@BARON, 0, 7, 100, 0, 5000, 5000, 0, 0, 36, @SABELLIAN, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Baron Sablemane - Transform (Phase 3)'),
+(@BARON, 0, 7, 100, 1, 6000, 7000, 6500, 7500, 11, 39263, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Baron Sablemane - Cast Flame Breath (Phase 3)'),
 
 (@REXXAR, 0, 0, 100, 1, 1000, 2000, 7000, 8000, 11, 40504, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Rexxar - Cast Cleave'),
 (@REXXAR, 0, 0, 100, 1, 3000, 3000, 5000, 6000, 11, 3391, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 'Rexxar - Cast Thrash'),
